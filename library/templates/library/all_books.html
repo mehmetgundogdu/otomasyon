@@ -1,0 +1,36 @@
+{% extends 'library/base.html' %}
+
+{% block body %}
+
+
+<center><h2>Kütüphane kitap katalogu</h2></center>
+  <p>Kitapların başlığına tıklayarak ödünç durumunu öğrenebilir, yazarı ve bağlı olduğu yayınevi hakkında bilgi alabilirsiniz.</p>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Adı</th>
+        <th>Yazarı</th>
+        <th>Yayınevi</th>
+          <th>Sayfa sayısı</th>
+          <th>ISBN</th>
+      </tr>
+    </thead>
+</table>
+
+    {% for book in books_all%}
+      <ul class="list-group">
+          <li class="list-group-item list-group-item-warning"><h4>
+<a href="/all_books/{{ book.id }}"> {{book.title}} </a> |
+          <a href="/books/{{ book.author.id }}"> {{book.author}}</a> |
+          <a href="/publishers/{{ book.publisher.id }}"> {{book.publisher}}  </a> Yayınları |
+          {{book.page_amount}} |
+          {{book.ISBN}}</h4>
+          </li>
+          </ul>
+    {% endfor %}
+
+
+{% endblock %}

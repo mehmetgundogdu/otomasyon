@@ -1,0 +1,23 @@
+{% extends 'library/base.html' %}
+
+{% block body %}
+
+{% if all_author %}
+<h2>Kütüphane kataloğunda kayıtlı olan tüm yazarların listesi</h2>
+  <p>Yazarların üstüne tıklayarak bilgi alabilirsiniz.</p>
+<u>
+    {% for author in all_author %}
+    <div class="list-group">
+        <h3>
+<a href="/books/{{ author.id }}" class="list-group-item">{{author.name}} <font color="blue"> {{ author.surname }} </font> </a>
+        </h3>
+        </div>
+    {% endfor %}
+    </u>
+{% else %}
+<h1>kitap yok</h1>
+{% endif %}
+
+</u>
+
+{% endblock %}

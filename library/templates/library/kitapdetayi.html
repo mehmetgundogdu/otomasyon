@@ -1,0 +1,36 @@
+{% extends 'library/base.html' %}
+
+{% block body %}
+
+   <table>
+      <tr>
+         <td><h3>Adı: </h3></td>
+         <td><h3><font color="blue">{{book.title}}</font> </h3></td>
+      </tr>
+      <tr>
+         <td><h3>Yazarı: </h3></td>
+         <td><h3><font color="blue"><a href="/books/{{ book.author.id }}">{{book.author}}</a></font> </h3></td>
+      </tr>
+       <tr>
+         <td><h4>Yayınevi: </h4></td>
+         <td><h4><font color="brown"><a href="/publishers/{{ book.publisher.id }}"> {{book.publisher}} </a></font></h4></td>
+      </tr>
+              <tr>
+         <td><h4>ISBN: </h4></td>
+         <td><h4><font color="brown"> {{book.ISBN}} </font></h4></td>
+      </tr>
+              <tr>
+         <td><h4>Sayfa sayısı: </h4></td>
+         <td><h4><font color="brown"> {{book.page_amount}} </font></h4></td>
+      </tr>
+              <tr>
+         <td><h4>Şu an kimde: </h4></td>
+         <td><h4><font color="brown"> {{book.lendby}} </font></h4></td>
+      </tr>
+              <tr>
+         <td><h4>Ne zamana kadar: </h4></td>
+         <td><h4><font color="brown"> {{book.lendperiod}} </font></h4></td>
+      </tr>
+   </table>
+
+{% endblock %}

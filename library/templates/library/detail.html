@@ -1,0 +1,65 @@
+{% extends 'library/base.html' %}
+
+{% block body %}
+
+
+<div class="container">
+  <h2>Yazar hakkında</h2>
+  <p>Yazar hakkında bilgiler ve veritabanında kayıtlı tüm kitapları.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><font color="brown"><h3>Adı</h3></font></th>
+        <th><font color="brown"><h3>Soyadı</h3></font></th>
+        <th><font color="brown"><h3>Doğum Tarihi</h3></font></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><h4>{{author.name}}</h4></td>
+        <td><h4>{{author.surname}}</h4></td>
+        <td><h4>{{author.date_of_birth}}</h4></td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<h4>Bu otomasyonda <font color="orange"> <i>{{author.name}} {{author.surname}} </i>  </font> adına kayıtlı kitapların listesi  </h4>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Kitabın adı</th>
+        <th>Yayınevi</th>
+          <th>Sayfa sayısı</th>
+          <th>ISBN</th>
+      </tr>
+    </thead>
+</table>
+
+
+
+    {% for book in author.book_set.all %}
+      <ul class="list-group">
+          <li class="list-group-item list-group-item-success"><h4>
+<a href="/all_books/{{ book.id }}"> {{book.title}} </a> |
+          <a href="/publishers/{{ book.publisher.id }}"> {{book.publisher}}  </a> Yayınları |
+
+          {{book.page_amount}} |
+          {{book.ISBN}}
+          </h4>
+          </li>
+          </ul>
+    {% endfor %}
+
+
+
+{% endblock %}

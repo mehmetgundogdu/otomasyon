@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block title %}Kutuphane Otomasyonu{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'library/css/bootstrap.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'library/style.css' %}"/>
+    <script src="{% static 'library/js/jquery.min.js' %}"></script>
+    <script src="{% static 'library/js/bootstrap.css' %}"></script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+        <div class="page-header">
+            <a href="{% url 'library:index' %}"><h2>Kutuphanem Uygulaması</h2></a>
+        </div>
+
+
+  <div class="jumbotron">
+
+      <p><img src="{%  static 'library/image/hakkinda.jpg' %}" class="img-circle" alt="Cinque Terre" width="59" height="59">
+Kütüphane otomasyonuna hoş geldiniz. Kitapları, Yazarları ve Yayınevleri kataloglarına ulaşıp detaylı bilgi alabilir.
+      Ve ödünç aldığınız kitapların son iade tarihlerini <i>ödünç bilgisi</i> bölümünden öğrenebilirsiniz.</p>
+
+      <p>
+
+          <a href="{% url 'library:login_user' %}" class="btn btn-xs btn-danger" role="button">Ödünç bilgisi</a>
+
+          <a href="{% url 'library:books' %}" class="btn btn-default btn-lg" role="button">Yazarlar</a>
+
+          <a href="{% url 'library:all_books' %}" class="btn btn-primary btn-lg" role="button">Kitaplar</a>
+
+          <a href="{% url 'library:publishers' %}" class="btn btn-success btn-lg" role="button">Yayınevleri</a>
+
+          <a href="{% url 'library:about' %}" class="btn btn-warning btn-lg" role="button">Hakkında</a>
+
+          <a href="{% url 'library:contact' %}" class="btn btn-info btn-lg" role="button">İletişim</a>
+
+
+      </p>
+
+
+  </div>
+
+
+</body>
+
+{% block body %}
+{% endblock %}

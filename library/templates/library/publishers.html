@@ -1,0 +1,21 @@
+{% extends 'library/base.html' %}
+
+{% block body %}
+
+<center><h2>Veritabanına kayıtlı tüm yayınevleri</h2>
+  <p>Yayınevlerine ait kitapları görmek için tıklayabilirsiniz.</p></center>
+
+<ul class="list-group">
+    {% for publisher in publisher_all %}
+    <center><li class="list-group-item list-group-item-success">
+        <h3>
+            <a href="/publishers/{{ publisher.id }}">{{ publisher.pub }} </a> Yayınları
+        </h3>
+    </li></center>
+    {% endfor %}
+
+    </ul>
+
+
+
+{% endblock %}
