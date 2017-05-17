@@ -1,4 +1,4 @@
 # Django ile Kutuphane Otomasyonu Projesi
 # Mehmet Gundogdu
-# 02130001043
+# teknogezgin@gmail.com
 # Internet Programciligi dersi
